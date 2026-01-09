@@ -1,0 +1,24 @@
+{
+  "author": "Nico Proyer",
+  "name": "weatherstation_api",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc && npm run copy:web",
+    "copy:web": "cpx \"src/web/**/*\" dist/web",
+    "api": "node ./dist/server.main.js",
+    "api-dev": "nodemon --watch src --ext ts --exec \"npm run build && node ./dist/server.main.js\""
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "mysql2": "^3.16.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "cpx": "^1.5.0",
+    "express": "^5.2.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
