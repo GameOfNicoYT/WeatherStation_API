@@ -1,14 +1,7 @@
 import express, { Request, Response, Router } from "express";
 import db from "../data/db";
-import path from "path";
-import { WEB_ROOT } from "../server.main";
 
 const router: Router = express.Router();
-
-router.get("/", (req, res) => {
-  res.type("html");
-  res.status(200).sendFile(WEB_ROOT);
-});
 
 router.get("/api/weather/latest", async (_req, res) => {
   try {
